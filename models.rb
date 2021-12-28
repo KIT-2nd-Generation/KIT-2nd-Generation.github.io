@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :mail,
     presence: true,
-    format: {with:/.+@.+/},
+    format: {with:/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i},
+    uniqueness: true
   validates :password,
-    length: {in: 8..20}
+    presence: true,
+    length: {in: 5..20}
 end

@@ -1,7 +1,0 @@
-<% unless session[:user]%>
-	<a href="/signin">Sign In</a> <a href="/signup">Sign Up</a><br>
-	<h2>Not Logged In</h2>
-  <% else %>
-		<a href="/signout">Sign Out</a>
-		<h2>Sign in as <%= User.find(session[:user]).mail %></h2>
-<% end %>
