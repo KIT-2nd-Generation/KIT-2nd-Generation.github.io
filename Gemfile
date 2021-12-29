@@ -12,13 +12,12 @@ gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 gem 'activerecord', '5.2.3'
 
-group :development, :test do
-  gem 'sqlite3', '1.3.13'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+group :development, :test do 
+   gem 'sqlite3'    #gem to use in development-test environment
 end
 
-group :production do
-  gem 'pg', '0.20.0'
+group :production do 
+  gem 'pg'         #gem to use in production environment
 end
 
 gem 'rake'
