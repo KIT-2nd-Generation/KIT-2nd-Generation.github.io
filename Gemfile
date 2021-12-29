@@ -12,9 +12,14 @@ gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 gem 'activerecord', '5.2.3'
 
-gem 'sqlite3', groups: %w(test development), require: false
+group :development, :test do
+  gem 'sqlite3', '1.3.13'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
 
-gem 'pg', groups: %w(production), require: false
+group :production do
+  gem 'pg', '0.20.0'
+end
 
 gem 'rake'
 gem 'bcrypt'
