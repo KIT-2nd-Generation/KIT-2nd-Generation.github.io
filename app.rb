@@ -7,8 +7,7 @@ require './models'
 enable :sessions
 
 before do
-    if !current_user && !["/", "/signin", "/signup", "/mailing_list", "/mission_statement", "/offer", "/news", "/terms_of_service"].include?(request.path_info)  
-        flash[:notice] = "Please sign up or sign in before accessing!"
+    if !current_user && !["/", "/signin", "/signup"].include?(request.path_info)
         redirect '/'
     end
 end

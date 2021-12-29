@@ -9,20 +9,6 @@
 
   <link rel="stylesheet" type="text/css" href="/css/home.css">
   
-  <div class="header">
-    <img src="/images/kitlogo.jpg" alt="KIT logo" style="width:75px;height:75px; display: inline-block;">
-    <div class="header-right">
-      <a class="active" style="display: inline-block;" href="/">Home</a>
-      <% unless session[:user] %>
-        <li class="active" style="list-style: none; display: inline-block;"><a href="/signin">Sign In<span class="sr-only"></span></a></li>
-        <li style="list-style: none; display: inline-block;"><a href="/signup">Sign Up</a></li>
-      <% else %>
-        <li style="list-style: none; display: inline-block;">Hello, <%= current_user.mail %>!</li>
-        <li style="list-style: none; display: inline-block;"><a href="/signout">Log Out</a></li>
-      <% end %>
-    </div>
-  </div>
-  
 </head>
 <body>
   <%= yield %>
